@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Template 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: white;
+            background-color: #000000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80px;
+            background-color: #0B60B0;
+            margin: 20px;
+            border-radius: 40px;
+            position: sticky;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            border-radius: 50px;
+        }
+
+        nav ul li a:hover {
+            color: #0B60B0;
+            background-color: #F0EDCF;
+        }
+
+        .home {
+            height: 100%;
+            width: 100%;
+        }
+
+        .left {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .firstsection>div {
+            width: 30%;
+        }
+
+        .leftsection {
+            position: relative;
+            left: 50px;
+            font-size: 3rem;
+            margin: 70px 0;
+        }
+
+        .rightsection img {
+            width: 100%;
+        }
+
+        .firstname {
+            color: #0B60B0;
+            font-weight: 600;
+            font-size: 3.5rem;
+        }
+
+        #keyword {
+            color: #0B60B0;
+            font-weight: 600;
+            font-size: 3.5rem;
+        }
+
+        .profiles {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            border: 1px solid #0B60B0;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-50%);
+        }
+
+        .profiles li {
+            list-style-type: none;
+        }
+
+        .profiles li a {
+            font-size: 20px;
+            display: block;
+            text-align: center;
+            padding: 15px 12px;
+            border-radius: 50px;
+            color: #0B60B0;
+        }
+
+        .profiles li a:hover {
+            background-color: #F0EDCF;
+        }
+
+        #resume {
+            background-color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: #0B60B0;
+            font-size: 1.3rem;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 1.5px;
+        }
+
+        #resume:hover {
+            background-color: #0B60B0;
+            color: #000000;
+            box-shadow: #0B60B0;
+        }
+
+        .about {
+            background-color: #40A2D8;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 5rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            font-family:'Poppins', sans-serif;
+        }
+
+        h1:hover {
+            opacity: 1;
+        }
+
+        .about h1::before {
+            content: "";
+            position: absolute;
+            left: 42vw;
+            top: 140%;
+
+            width: 150px;
+            height: 14px;
+            transform: skew(-12deg) translateX(-50%);
+            background: rgba(255, 255, 255, 0.5);
+
+        }
+
+
+        .about .para {
+            margin-left: 15%;
+            margin-right: 15%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .uppersvg {
+            background-color: black;
+        }
+
+        .lowersvg {
+            color: black;
+            display: block;
+        }
+
+        .snt {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .snt li {
+            list-style: none;
+            padding: 8px 10px;
+        }
+
+        .skills,
+        .tools {
+            margin-top: 20px;
+            border: #F0EDCF solid 2px;
+            padding: 15px 100px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .skills:hover,
+        .tools:hover {
+            background-color: #F0EDCF;
+            color: #0B60B0;
+        }
+
+        .skills {
+            border-radius: 80px 0px 80px 80px;
+        }
+
+        .tools {
+            border-radius: 0px 80px 80px 80px;
+        }
+
+        .experience .top-section {
+            text-align: center;
+            padding: 0% 20%;
+        }
+
+        .experience .timeline {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 5% 15%;
+        }
+
+        .experience .timeline .left-exp,
+        .experience .timeline .right-exp {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .experience .timeline .right-exp {
+            margin-top: 10%;
+        }
+
+        .line {
+            width: 15px;
+            background-color: rgb(75, 75, 75);
+            border-radius: 50px;
+        }
+
+        .bead {
+            background-color: #0B60B0;
+            border-radius: 50%;
+            width: 15px;
+            height: 10px;
+            position: absolute;
+            left: 49.5%;
+        }
+
+        .timeline .section {
+            margin: 30px;
+            border: #0B60B0 solid 2px;
+            padding: 20px;
+            transition: background-color 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .timeline .section:hover {
+            background-color: rgba(11, 96, 176, 0.2);
+        }
+
+        .timeline .left-exp .section {
+            border-radius: 40px 0px 40px 30px;
+        }
+
+        .timeline .right-exp .section {
+            border-radius: 0px 40px 30px 40px;
+        }
+
+        .experience h1::before {
+            content: "";
+            position: absolute;
+            left: 45vw;
+            top: 250%;
+            width: 250px;
+            height: 14px;
+            transform: skew(-12deg) translateX(-50%);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .project {
+            background-color: #40A2D8;
+            text-align: center;
+        }
+
+        .project .containers {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 0% 10%;
+        }
+
+        .project .containers .container img {
+            height: 300px;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        .project .containers .container {
+            margin: 20px 20px;
+            padding: 20px;
+            background-color: rgba(11, 96, 176, 0.4);
+            border-radius: 20px;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .project .containers .container a {
+
+            font-size: 1.7rem;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50%;
+        }
+
+        .project .containers .container a:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .project .containers .container:hover {
+            background-color: rgba(11, 96, 176, 0.7);
+        }
+
+        @media (max-width:900px) {
+            .project .containers {
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+        .achievement {
+            text-align: center;
+            margin: 0% 15%;
+        }
+        .achievement .ach-container{
+            display: flex;
+            justify-content: left;
+        }
+
+        .achievement .content {
+            text-align: left;
+        }
+
+        .achievement ul {
+            line-height: 80px;
+        }
+
+        .achievement li {
+            font-size: 1.4rem;
+            letter-spacing: 0.2rem;
+            list-style: none;
+            cursor: pointer;
+        }
+        .achievement li:hover{
+            color:#40A2D8;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Priyanshu Prasad</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Experence</a></li>
+                    <li><a href="/">Achevements</a></li>
+                    <li><a href="/">Projects</a></li>
+                    <li><a href="/">Contact me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="home">
+            <section class="firstsection">
+                <ul class="profiles">
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+                    <li><a href="#"><i class="fa-solid fa-code"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+                <div class="leftsection">
+                    Hi , I am
+                    <span class="firstname">Priyanshu</span>
+                    <div>
+                        A harworking <br><span id="keyword"></span>
+                    </div>
+                    <div class="cv">
+                        <button id="resume">Resume</button>
+                    </div>
+                </div>
+                <div class="rightsection">
+                    <img src="bg1.png" alt="">
+                </div>
+            </section>
+        </div>
+        <div class="about">
+            <svg class="uppersvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#40A2D8" fill-opacity="1"
+                    d="M0,288L34.3,256C68.6,224,137,160,206,149.3C274.3,139,343,181,411,208C480,235,549,245,617,234.7C685.7,224,754,192,823,192C891.4,192,960,224,1029,245.3C1097.1,267,1166,277,1234,272C1302.9,267,1371,245,1406,234.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+            <h1>About Me</h1>
+            <div class="para">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium temporibus fugit odio tempora,
+                    ab ex sit unde a ad officia. Quas officiis beatae quisquam nobis eum ab dolorem atque. Ipsam?</p>
+            </div>
+            <div class="snt">
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Javascript</li>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>DSA</li>
+                    </ul>
+                </div>
+                <div class="tools">
+                    <h2>Tools</h2>
+                    <ul>
+                        <li>Django</li>
+                        <li>VSCode</li>
+                        <li>PowerBI</li>
+                        <li>Scikt-learn</li>
+                        <li>React</li>
+                        <li>mysql</li>
+                    </ul>
+                </div>
+            </div>
+            <svg class="lowersvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
+                <path fill="black" fill-opacity="1"
+                    d="M0,288L34.3,256C68.6,224,137,160,206,149.3C274.3,139,343,181,411,208C480,235,549,245,617,234.7C685.7,224,754,192,823,192C891.4,192,960,224,1029,245.3C1097.1,267,1166,277,1234,272C1302.9,267,1371,245,1406,234.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+        <div class="experience">
+            <div class="container">
+                <div class="top-section">
+                    <h1>Experience</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et quas quam culpa nihil laborum!
+                        Ullam quaerat nam magni nulla eaque iusto quibusdam provident ipsa blanditiis, quos architecto
+                        tempore aperiam accusantium!
+                    </p>
+                </div>
+                <div class="timeline">
+                    <div class="left-exp">
+                        <div class="section">
+                            <div class="content">
+                                <h2>Google SDE 1</h2>
+                                <p>2018-19</p>
+                                <div class="bead"></div>
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora distinctio quod
+                                    ipsam autem dolorem debitis? Laborum necessitatibus nostrum dicta. Suscipit, et
+                                    veritatis maxime assumenda illum quod ad? Similique, laudantium soluta!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <div class="content">
+                                <h2>Amazon SDE 1</h2>
+                                <p>2019-20</p>
+                                <div class="bead"></div>
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora distinctio quod
+                                    ipsam autem dolorem debitis? Laborum necessitatibus nostrum dicta. Suscipit, et
+                                    veritatis maxime assumenda illum quod ad? Similique, laudantium soluta!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="right-exp">
+                        <div class="section">
+                            <div class="content">
+                                <h2>Google DeepMind</h2>
+                                <p>2020-22</p>
+                                <div class="bead"></div>
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora distinctio quod
+                                    ipsam
+                                    autem dolorem debitis? Laborum necessitatibus nostrum dicta. Suscipit, et veritatis
+                                    maxime assumenda illum quod ad? Similique, laudantium soluta!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="section">
+                            <div class="content">
+                                <h2>DALLE-e</h2>
+                                <p>2023-present</p>
+                                <div class="bead"></div>
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora distinctio quod
+                                    ipsam
+                                    autem dolorem debitis? Laborum necessitatibus nostrum dicta. Suscipit, et veritatis
+                                    maxime assumenda illum quod ad? Similique, laudantium soluta!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project">
+            <svg class="uppersvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
+                <path fill="#40A2D8" fill-opacity="1"
+                    d="M0,288L34.3,256C68.6,224,137,160,206,149.3C274.3,139,343,181,411,208C480,235,549,245,617,234.7C685.7,224,754,192,823,192C891.4,192,960,224,1029,245.3C1097.1,267,1166,277,1234,272C1302.9,267,1371,245,1406,234.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+            <h1>Projects</h1>
+            <div class="containers">
+                <div class="container">
+                    <img src="project1.jpg" alt="">
+                    <h3>Skills Syncer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dignissimos sint libero
+                        repellat est officiis aperiam </p>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="container">
+                    <img src="project2.png" alt="">
+                    <h3>Skills Syncer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dignissimos sint libero
+                        repellat est officiis aperiam </p>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="container">
+                    <img src="project3.avif" alt="">
+                    <h3>Skills Syncer</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, dignissimos sint libero
+                        repellat est officiis aperiam </p>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <svg class="lowersvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319">
+                <path fill="black" fill-opacity="1"
+                    d="M0,288L34.3,256C68.6,224,137,160,206,149.3C274.3,139,343,181,411,208C480,235,549,245,617,234.7C685.7,224,754,192,823,192C891.4,192,960,224,1029,245.3C1097.1,267,1166,277,1234,272C1302.9,267,1371,245,1406,234.7L1440,224L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+        <div class="achievement">
+            <h1>ACHIEVEMENT</h1>
+            <div class="ach-container">
+                <div class="content">
+                    <ul>
+                        <li><i class="fa-solid fa-trophy"></i> Got selected in <b>Top 100 startup</b> in <b>Cisco cohert</b></li>
+                        <li><i class="fa-solid fa-trophy"></i> Reached protyping stage in <b>Google Map Hackthon</b></li><a href=""></a>
+                        <li><i class="fa-solid fa-trophy"></i> Reached <b>Top 16 teams</b> in <b>World Robotics Champion</b>.</li><a href=""></a>
+                        <li><i class="fa-solid fa-trophy"></i> Co-ordinator in <b>Tikering Lab, S&T</b></li><a href=""></a>
+                        <li><i class="fa-solid fa-trophy"></i> <b>Tecnical team excecutive</b> in <b>Cisco ThinkQubator</b></li><a href=""></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <h1>Contact me!</h1>
+            <div class="left-box">
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://kit.fontawesome.com/819f6cf4e3.js" crossorigin="anonymous"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#keyword', {
+            strings: ['Web Devloper', 'ML Engineer'],
+            typeSpeed: 80,
+        });
+    </script>
+
+</body>
+
+</html>
